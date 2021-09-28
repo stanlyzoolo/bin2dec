@@ -11,4 +11,8 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-ben2dec
+# Binary
+bin2dec
+
+#...
+pkg

@@ -1,4 +1,4 @@
-module ben2dec
+module bin2dec
 
 go 1.17
 
