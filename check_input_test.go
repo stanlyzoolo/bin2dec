@@ -49,7 +49,7 @@ func TestBin2Dec(t *testing.T) {
 	cases := []TestCase{
 		{
 			testCaseID: 1,
-			input:      "1111111",
+			input:      "11111111",
 			expected:   255,
 		},
 		{
