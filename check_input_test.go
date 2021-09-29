@@ -1,4 +1,4 @@
-package bin2dec_test
+package bin2dec
 
 import (
 	"testing"
