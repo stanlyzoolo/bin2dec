@@ -1,4 +1,4 @@
-module github.com/stanlyzoolo/bin2dec
+module bin2dec
 
 go 1.17
 

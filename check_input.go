@@ -1,4 +1,4 @@
-package bin2dec
+package main
 
 import "github.com/pkg/errors"
 
