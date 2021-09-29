@@ -1,4 +1,4 @@
-package main
+package bin2dec
 
 import (
 	"fmt"
@@ -14,22 +14,24 @@ const (
 type sequence struct {
 	binary  string
 	err     error
-	decimal int
+	decimal interface{}
 }
 
 func main() {
 	var expression sequence
 
 	fmt.Print("Enter a condition consisting of binary digits (0 or 1), up to 8 characters: ")
-	fmt.Scan(&expression.binary)
+	fmt.Scanf("%s", &expression.binary)
 
-	condition, err := checkInput(expression.binary)
+	err := checkInput(expression.binary)
 	if err != nil {
 		expression.err = err
+		expression.decimal = "failed"
+	} else {
+		expression.decimal = bin2dec(expression.binary)
 	}
 
-	expression.decimal = bin2dec(condition)
-	fmt.Printf("Output:\ncondition: %s, conversion result: %d, error: %#v\n",
+	fmt.Printf("Output:\ncondition: %s, conversion result: %v, error: %#v\n",
 		expression.binary, expression.decimal, expression.err)
 }
 
