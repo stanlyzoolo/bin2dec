@@ -10,7 +10,7 @@ func binaryErr(p int, v string) error {
 	return errors.Errorf("unexpected binary digit or character {position: %v; value: %s}", p, v)
 }
 
-func checkInput(input string) error {
+func check(input string) error {
 	var binaries = map[rune]rune{'0': '0', '1': '1'}
 
 	for k, s := range input {

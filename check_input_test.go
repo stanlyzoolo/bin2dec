@@ -11,24 +11,24 @@ type TestCase struct {
 	expected   int
 }
 
-func TestCheckInput(t *testing.T) {
+func TestCheck(t *testing.T) {
 
 	cases := []TestCase{
 		{
 			testCaseID: 1,
-			err:        checkInput("12"),
+			err:        check("12"),
 		},
 		{
 			testCaseID: 2,
-			err:        checkInput("0101010101101101010001101010"),
+			err:        check("0101010101101101010001101010"),
 		},
 		{
 			testCaseID: 3,
-			err:        checkInput("11 11"),
+			err:        check("11 11"),
 		},
 		{
 			testCaseID: 4,
-			err:        checkInput("000/00"),
+			err:        check("000/00"),
 		},
 	}
 

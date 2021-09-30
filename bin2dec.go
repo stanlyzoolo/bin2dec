@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 	"strconv"
 )
@@ -11,36 +10,12 @@ const (
 	systemBase float64 = 2
 )
 
-type sequence struct {
-	binary  string
-	err     error
-	decimal interface{}
-}
-
-func main() {
-	var expression sequence
-
-	fmt.Print("Enter a condition consisting of binary digits (0 or 1), up to 8 characters: ")
-	fmt.Scanf("%s", &expression.binary)
-
-	err := checkInput(expression.binary)
-	if err != nil {
-		expression.err = err
-		expression.decimal = "failed"
-	} else {
-		expression.decimal = bin2dec(expression.binary)
-	}
-
-	fmt.Printf("Output:\ncondition: %s, conversion result: %v, error: %#v\n",
-		expression.binary, expression.decimal, expression.err)
-}
-
-func bin2dec(condition string) int {
+func bin2dec(checked string) int {
 	var decimal int
 
-	degree := len(condition)
+	degree := len(checked)
 
-	for _, i := range condition {
+	for _, i := range checked {
 		digit, _ := strconv.Atoi(string(i))
 
 		degree--
